@@ -9,7 +9,7 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 
 ---
 
-# 🚨 Problem Statement
+# Problem Statement
 
 ### 🔧 Engineering Teams
 
@@ -17,14 +17,14 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 * Manual code reviews are slow, inconsistent, and expensive
 * Developers lack automated guidance and best-practice enforcement
 
-### 🧑‍💼 Leadership & Management
+### Leadership & Management
 
 * No reliable, privacy-first way to monitor **team health**, **burnout indicators**, or **engineering ROI**
 * Lack of visibility into code quality trends and AI tool adoption
 
 ---
 
-# 🎯 Our Solution
+# Our Solution
 
 **Code Quality** solves both developer-side and manager-side problems using an integrated AI system.
 
@@ -39,7 +39,7 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 
 # 🚀 Features
 
-## 🤖 Developer-Facing AI Features
+## Developer-Facing AI Features
 
 * **Automated Line-by-Line Code Reviews**
   Bug fixes, optimizations, refactoring suggestions, security checks.
