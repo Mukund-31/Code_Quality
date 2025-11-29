@@ -24,14 +24,20 @@ npm run dev
 See [website/README.md](./website/README.md) for detailed setup instructions.
 
 ### Plugin
-The plugin integrates with your IDE to send code reviews to the platform.
+The VS Code extension provides AI-powered code reviews directly in your editor.
 
-Documentation coming soon.
+```bash
+cd plugin
+npm install
+npm run compile
+```
+
+See [plugin/README.md](./plugin/README.md) for detailed documentation.
 
 ## 📚 Documentation
 
 - **Website Documentation**: [website/README.md](./website/README.md)
-- **Plugin Documentation**: Coming soon
+- **Plugin Documentation**: [plugin/README.md](./plugin/README.md)
 
 ## 🤝 Contributing
 

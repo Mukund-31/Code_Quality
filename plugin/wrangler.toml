@@ -1,0 +1,17 @@
+name = "code-quality-worker"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "code-quality-worker"
+route = "https://sarvi.hi-codequality.workers.dev/*"
+
+[env.production.vars]
+SUPABASE_URL = "https://YOUR_SUPABASE_URL"
+OPENROUTER_API_KEY = "YOUR_OPENROUTER_KEY"
+GEMINI_API_KEY = "YOUR_GEMINI_KEY"
+APP_URL = "https://getcq.netlify.app"
+APP_NAME = "Code Quality"
+
+[env.production.secrets]
+SUPABASE_SERVICE_KEY = "YOUR_SUPABASE_SERVICE_KEY"
