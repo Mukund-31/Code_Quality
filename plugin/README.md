@@ -8,6 +8,8 @@ A powerful VS Code extension combined with a GitHub-integrated AI platform that 
 Built for high-quality engineering workflows and modern AI-assisted development.
 
 ---
+# <img src="https://github.com/user-attachments/assets/10fe3c86-6605-4e81-a93d-7d2fa5a5d5eb" width="120"/>
+
 
 # Problem Statement
 
