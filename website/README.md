@@ -667,15 +667,9 @@ This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgments
 
-- Inspired by CodeRabbit.ai
 - Built with amazing open-source tools
 - Community feedback and contributions
 
----
-
-## 📞 Support
-
-For support, please open an issue on GitHub or contact the maintainers.
 
 ---
 
