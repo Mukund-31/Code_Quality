@@ -7,6 +7,9 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 ---
 # <img src="https://github.com/user-attachments/assets/10fe3c86-6605-4e81-a93d-7d2fa5a5d5eb" width="120"/>
 
+# Unique Selling Proposition (USP)
+
+The only VS Code extension that not only performs AI-powered code reviews using multiple models, but also provides a privacy-first Manager Dashboard with team health analytics, burnout indicators, and ROI tracking — bridging the gap between engineering execution and leadership visibility.
 
 # Problem Statement
 
