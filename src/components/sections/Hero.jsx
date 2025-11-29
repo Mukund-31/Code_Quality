@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
-import { ArrowRight, Sparkles, Code2, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, Code2, Zap, GitBranch, Terminal } from 'lucide-react';
 import Container from '../ui/Container';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 import GradientText from '../ui/GradientText';
 import { useGSAP } from '../../hooks/useGSAP';
 import { useMagneticEffect } from '../../hooks/useMagneticEffect';
@@ -75,6 +75,83 @@ const Hero = () => {
       ease: 'none',
       repeat: -1,
     });
+
+    // Animated orbs
+    gsap.to('.animated-orb-1', {
+      x: 100,
+      y: -50,
+      scale: 1.2,
+      duration: 8,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+    });
+
+    gsap.to('.animated-orb-2', {
+      x: -80,
+      y: 60,
+      scale: 0.8,
+      duration: 10,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+    });
+
+    gsap.to('.animated-orb-3', {
+      x: -60,
+      y: -40,
+      scale: 1.1,
+      duration: 7,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+    });
+
+    // Particle animation
+    gsap.to('.particle', {
+      y: -100,
+      opacity: 0,
+      duration: 3,
+      ease: 'power1.out',
+      stagger: {
+        each: 0.2,
+        repeat: -1,
+        repeatDelay: 1,
+      },
+    });
+
+    // Rotating icons
+    gsap.to('.rotating-icon', {
+      rotation: 360,
+      duration: 20,
+      ease: 'none',
+      repeat: -1,
+    });
+
+    // Pulsing glow effect
+    gsap.to('.pulse-glow', {
+      scale: 1.5,
+      opacity: 0,
+      duration: 2,
+      ease: 'power2.out',
+      stagger: {
+        each: 0.5,
+        repeat: -1,
+      },
+    });
+
+    // Grid animation
+    gsap.to('.grid-line', {
+      opacity: 0.3,
+      duration: 2,
+      ease: 'power1.inOut',
+      yoyo: true,
+      repeat: -1,
+      stagger: {
+        each: 0.1,
+        from: 'random',
+      },
+    });
   }, []);
 
   const stats = [
@@ -90,11 +167,37 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-950 pt-20"
     >
       {/* Gradient Background */}
-      <div className="absolute inset-0 gradient-bg bg-gradient-to-br from-primary-900/20 via-purple-900/20 to-pink-900/20" 
-           style={{ backgroundSize: '200% 200%' }} />
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      <div className="absolute inset-0 gradient-bg bg-gradient-to-br from-primary-900/10 via-dark-950 to-purple-900/10"
+        style={{ backgroundSize: '200% 200%' }} />
+
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 opacity-20">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={`grid-h-${i}`}
+            className="grid-line absolute w-full h-px bg-gradient-to-r from-transparent via-primary-500/20 to-transparent"
+            style={{ top: `${i * 5}%` }}
+          />
+        ))}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={`grid-v-${i}`}
+            className="grid-line absolute h-full w-px bg-gradient-to-b from-transparent via-primary-500/20 to-transparent"
+            style={{ left: `${i * 5}%` }}
+          />
+        ))}
+      </div>
+
+      {/* Large Animated Orbs */}
+      <div className="absolute top-1/4 left-1/4 animated-orb-1">
+        <div className="w-96 h-96 bg-gradient-to-br from-primary-500/20 to-purple-500/20 rounded-full blur-3xl" />
+      </div>
+      <div className="absolute top-1/3 right-1/4 animated-orb-2">
+        <div className="w-80 h-80 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
+      </div>
+      <div className="absolute bottom-1/4 left-1/3 animated-orb-3">
+        <div className="w-72 h-72 bg-gradient-to-br from-pink-500/20 to-primary-500/20 rounded-full blur-3xl" />
+      </div>
 
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 floating-element">
@@ -107,12 +210,37 @@ const Hero = () => {
         <div className="w-20 h-20 bg-pink-500/10 rounded-full blur-xl" />
       </div>
 
-      {/* Floating Icons */}
-      <div className="absolute top-32 right-1/4 floating-element opacity-20">
+      {/* Pulsing Glow Effects */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="pulse-glow absolute w-32 h-32 bg-primary-500/30 rounded-full blur-2xl" />
+        <div className="pulse-glow absolute w-32 h-32 bg-purple-500/30 rounded-full blur-2xl" />
+        <div className="pulse-glow absolute w-32 h-32 bg-pink-500/30 rounded-full blur-2xl" />
+      </div>
+
+      {/* Floating Particles */}
+      {[...Array(15)].map((_, i) => (
+        <div
+          key={`particle-${i}`}
+          className="particle absolute w-1 h-1 bg-primary-400/50 rounded-full"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+        />
+      ))}
+
+      {/* Rotating Icons */}
+      <div className="absolute top-32 right-1/4 rotating-icon floating-element opacity-10">
         <Code2 size={48} className="text-primary-500" />
       </div>
-      <div className="absolute bottom-32 left-1/3 floating-element opacity-20">
+      <div className="absolute bottom-32 left-1/3 rotating-icon floating-element opacity-10" style={{ animationDelay: '5s' }}>
         <Zap size={40} className="text-purple-500" />
+      </div>
+      <div className="absolute top-1/2 right-20 rotating-icon floating-element opacity-10" style={{ animationDelay: '10s' }}>
+        <GitBranch size={36} className="text-pink-500" />
+      </div>
+      <div className="absolute bottom-1/4 left-20 rotating-icon floating-element opacity-10" style={{ animationDelay: '15s' }}>
+        <Terminal size={44} className="text-primary-400" />
       </div>
 
       <Container className="relative z-10">
@@ -135,29 +263,29 @@ const Hero = () => {
 
           {/* Description */}
           <p className="hero-description text-xl md:text-2xl text-dark-300 mb-10 max-w-3xl mx-auto">
-            Automated code reviews that catch bugs, improve quality, and accelerate 
+            Automated code reviews that catch bugs, improve quality, and accelerate
             your development workflow. Get instant feedback on every pull request.
           </p>
 
           {/* CTA Buttons */}
           <div className="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button 
+            <Button
               ref={primaryBtnRef}
-              variant="primary" 
+              variant="primary"
               size="lg"
               magnetic
               className="group"
               onClick={() => navigate(user ? '/dashboard' : '/signup')}
             >
               {user ? 'Go to Dashboard' : 'Start Free Trial'}
-              <ArrowRight 
-                size={20} 
-                className="ml-2 group-hover:translate-x-1 transition-transform" 
+              <ArrowRight
+                size={20}
+                className="ml-2 group-hover:translate-x-1 transition-transform"
               />
             </Button>
-            <Button 
+            <Button
               ref={secondaryBtnRef}
-              variant="outline" 
+              variant="outline"
               size="lg"
               magnetic
               onClick={() => {

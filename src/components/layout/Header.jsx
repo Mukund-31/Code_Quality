@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Container from '../ui/Container';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 import { useAuth } from '../../contexts/AuthContext';
 import clsx from 'clsx';
 
@@ -22,19 +22,33 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Features', href: '#features' },
-    { name: 'How it Works', href: '#how-it-works' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'About', href: '#about' },
+    { name: 'Features', href: '/#features' },
+    { name: 'How it Works', href: '/#how-it-works' },
+    { name: 'Pricing', href: '/#pricing' },
+    { name: 'About', href: '/#about' },
   ];
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+    const [path, hash] = href.split('#');
+    
+    // If we're not on the home page, navigate to home first
+    if (window.location.pathname !== '/') {
+      navigate(path + (hash ? `#${hash}` : ''));
+      return;
     }
+    
+    // If we're already on the home page, just scroll to the section
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
+    }
+    
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -61,14 +75,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-dark-300 hover:text-white transition-colors duration-200 font-medium"
+                className="text-dark-300 hover:text-white transition-colors duration-200 font-medium text-base"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
 

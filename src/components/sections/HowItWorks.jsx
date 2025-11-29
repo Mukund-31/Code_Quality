@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { GitBranch, MessageSquare, CheckCircle, Rocket } from 'lucide-react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import Badge from '../ui/Badge';
+import { Badge } from '../ui/Badge';
 import { useGSAP } from '../../hooks/useGSAP';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,7 +14,7 @@ const HowItWorks = () => {
 
   useGSAP(() => {
     const steps = gsap.utils.toArray('.step-card');
-    
+
     steps.forEach((step, index) => {
       gsap.from(step, {
         x: index % 2 === 0 ? -100 : 100,
@@ -74,7 +74,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section 
+    <section
       id="how-it-works"
       ref={sectionRef}
       className="py-24 bg-dark-900 relative overflow-hidden"
@@ -101,16 +101,15 @@ const HowItWorks = () => {
         {/* Steps */}
         <div className="steps-container max-w-4xl mx-auto relative">
           {/* Connecting Line */}
-          <div className="connecting-line absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-purple-500 to-green-500 transform -translate-x-1/2 hidden md:block" 
-               style={{ transformOrigin: 'top' }} />
+          <div className="connecting-line absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-purple-500 to-green-500 transform -translate-x-1/2 hidden md:block"
+            style={{ transformOrigin: 'top' }} />
 
           <div className="space-y-12">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`step-card flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className={`step-card flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
@@ -145,7 +144,7 @@ const HowItWorks = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-20">
-          <div className="inline-block bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-2xl p-8 max-w-2xl">
+          <div className="inline-block bg-dark-800/50 backdrop-blur-sm border border-dark-700 rounded-2xl p-8 max-w-2xl hover:border-primary-500/30 transition-colors duration-300">
             <h3 className="text-2xl font-bold text-white mb-4">
               Ready to transform your code review process?
             </h3>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 import { Mail, Lock, AlertCircle } from 'lucide-react';
 
 const SignInForm = ({ onSuccess, onSwitchToSignUp }) => {

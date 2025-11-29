@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, X } from 'lucide-react';
 import Container from '../ui/Container';
 
 const Footer = () => {
@@ -12,9 +12,7 @@ const Footer = () => {
     ],
     company: [
       { name: 'About', href: '#about' },
-      { name: 'Blog', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Contact', href: '#' },
+      { name: 'Contact', href: 'mailto:codequality01@gmail.com?subject=Code%20Quality%20Inquiry' },
     ],
     resources: [
       { name: 'Community', href: '#' },
@@ -23,18 +21,46 @@ const Footer = () => {
       { name: 'Status', href: '#' },
     ],
     legal: [
-      { name: 'Privacy', href: '#' },
-      { name: 'Terms', href: '#' },
-      { name: 'Security', href: '#' },
-      { name: 'Cookies', href: '#' },
+      { name: 'Privacy', href: '/privacy', target: '_blank', rel: 'noopener noreferrer' },
+      { name: 'Terms', href: '/terms', target: '_blank', rel: 'noopener noreferrer' },
+      { name: 'Refund & Cancellation', href: '/refund-policy', target: '_blank', rel: 'noopener noreferrer' },
+      { name: 'Security', href: '#' }
     ],
   };
 
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    window.location.href = 'mailto:codequality01@gmail.com?subject=Code%20Quality%20Inquiry';
+  };
+
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: '#' },
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: 'Email', icon: Mail, href: '#' },
+    { 
+      name: 'GitHub', 
+      icon: Github, 
+      href: 'https://github.com/ShashidharSarvi/Code_Quality',
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    },
+    { 
+      name: 'X', 
+      icon: X, 
+      href: 'https://x.com/ShashidharSarvi',
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    },
+    { 
+      name: 'LinkedIn', 
+      icon: Linkedin, 
+      href: 'https://www.linkedin.com/company/code-quality/about/',
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    },
+    { 
+      name: 'Email', 
+      icon: Mail, 
+      href: '#',
+      onClick: handleEmailClick
+    },
   ];
 
   return (
@@ -54,11 +80,14 @@ const Footer = () => {
             <p className="text-dark-400 text-sm mb-6 max-w-xs">
               AI-powered code reviews that help teams ship better code faster.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
+                  target={social.target}
+                  rel={social.rel}
+                  onClick={social.onClick}
                   className="text-dark-400 hover:text-primary-500 transition-colors duration-200"
                   aria-label={social.name}
                 >
@@ -66,6 +95,12 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            <a 
+              href="mailto:codequality01@gmail.com" 
+              className="text-sm text-dark-400 hover:text-white transition-colors duration-200"
+            >
+              codequality01@gmail.com
+            </a>
           </div>
 
           {/* Links */}
@@ -79,6 +114,8 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
+                      target={link.target || '_self'}
+                      rel={link.rel || ''}
                       className="text-dark-400 hover:text-white transition-colors duration-200 text-sm"
                     >
                       {link.name}
@@ -93,10 +130,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-dark-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-dark-400 text-sm">
-            © {new Date().getFullYear()} Code Quality. All rights reserved.
-          </p>
-          <p className="text-dark-400 text-sm">
-            Built with ❤️ using React & GSAP
+            {new Date().getFullYear()} Code Quality. All rights reserved.
           </p>
         </div>
       </Container>
