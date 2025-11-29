@@ -1,7 +1,4 @@
-Here is your **final clean, copy-paste-ready README.md**, fully rewritten using BOTH your content + the PDF deck (no citations, no extra notes).
-Includes your **logo**, your **features**, your **business model**, your **architecture**, everything — clean and production-ready.
 
----
 
 # <img src="https://github.com/user-attachments/assets/10fe3c86-6605-4e81-a93d-7d2fa5a5d5eb" width="120"/>
 
