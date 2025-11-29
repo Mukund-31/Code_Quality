@@ -10,7 +10,7 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 
 # Problem Statement
 
-### 🔧 Engineering Teams
+### Engineering Teams
 
 * Struggle to maintain consistent code quality
 * Manual code reviews are slow, inconsistent, and expensive
@@ -36,7 +36,7 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 
 ---
 
-# 🚀 Features
+# Features
 
 ## Developer-Facing AI Features
 
@@ -51,7 +51,7 @@ Built for high-quality engineering workflows and modern AI-assisted development.
 
 ---
 
-## 🧠 Multiple AI Models Supported
+## Multiple AI Models Supported
 
 Powered by your Cloudflare Worker:
 
@@ -65,7 +65,7 @@ Choose once → used across all review operations.
 
 ---
 
-## 🔐 GitHub Integration
+## GitHub Integration
 
 * One-click GitHub login
 * Auto-login on next use
@@ -76,21 +76,21 @@ Choose once → used across all review operations.
 
 ---
 
-# 🧩 Review Options
+# Review Options
 
-### 📄 Review Current File
+### Review Current File
 
 Analyze the open file in the editor.
 
-### 📁 Review Selected Folder
+### Review Selected Folder
 
 Choose any folder from your system.
 
-### 🗂 Review Entire Workspace
+### Review Entire Workspace
 
 Analyze your full VS Code workspace.
 
-### 🐙 Review GitHub Repositories
+### Review GitHub Repositories
 
 * Browse all repos
 * Choose branches
@@ -99,7 +99,7 @@ Analyze your full VS Code workspace.
 
 ---
 
-# 🖥️ Architecture
+# Architecture
 
 ### 1. **VS Code Plugin**
 
@@ -125,19 +125,19 @@ Shows:
 
 ---
 
-# 💼 Business Model (Tiered)
+# Business Model (Tiered)
 
-### 🆓 Free Plan
+### Free Plan
 
 Basic usage with limited features.
 
-### 🔵 Pro Plan (For Developers)
+### Pro Plan (For Developers)
 
 * Line-by-line AI PR reviews
 * Bug detection & improvement suggestions
 * Faster review cycles
 
-### 🟡 Elite Plan (For Managers)
+### Elite Plan (For Managers)
 
 * Access to Manager Dashboard
 * Privacy-first analytics
@@ -148,7 +148,7 @@ Basic usage with limited features.
 
 ---
 
-# 📥 Installation & Setup
+# Installation & Setup
 
 ### Prerequisites
 
@@ -174,7 +174,7 @@ npm run compile
 
 ---
 
-# 🧪 Testing the Extension
+# Testing the Extension
 
 ### ✔ Auto-login
 
@@ -198,7 +198,7 @@ Browse My Repos → select → choose branch → start review.
 
 ---
 
-# ⚙️ Configuration
+# Configuration
 
 Cloudflare Worker endpoint:
 
@@ -208,7 +208,7 @@ https://sarvi.hi-codequality.workers.dev/
 
 ---
 
-# 🔧 Development
+# Development
 
 ### Project Structure
 
@@ -233,14 +233,14 @@ npm run test
 
 ---
 
-# 👥 Team
+# Team
 
 * **Mukund Verma**
 * **Shashidhar Sarvi**
 
 ---
 
-# 🙏 Acknowledgments
+# Acknowledgments
 
 * Cloudflare Workers
 * GitHub API (Octokit)
@@ -248,7 +248,7 @@ npm run test
 
 ---
 
-# 🎉 Enjoy AI-powered code reviews!
+# Enjoy AI-powered code reviews!
 
 Let me know if you want:
 
