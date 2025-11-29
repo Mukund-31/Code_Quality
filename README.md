@@ -6,8 +6,8 @@ This repository contains both the web application and the plugin for the Code Qu
 
 ```
 Code_Quality/
-├── website/          # Web application (React + Vite + Supabase)
-└── plugin/           # VS Code/IDE plugin (Coming soon)
+├── website/          # https://getcq.netlify.app/
+└── plugin/           # VS Code/IDE plugin
 ```
 
 ## 🚀 Quick Start
@@ -43,5 +43,5 @@ MIT License
 
 ## 👨‍💻 Authors
 
-- **Mukund** - [GitHub](https://github.com/Mukund-31)
+- **Mukund** - [GitHub](https://www.linkedin.com/in/mukund-verma-8b0a3024b/)
 - **Shashidhar Sarvi** - [GitHub](https://github.com/ShashidharSarvi)
