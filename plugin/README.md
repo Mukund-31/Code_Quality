@@ -1,7 +1,4 @@
 
-
-# <img src="https://github.com/user-attachments/assets/10fe3c86-6605-4e81-a93d-7d2fa5a5d5eb" width="120"/>
-
 # **Code Quality – AI Code Review Assistant**
 
 A powerful VS Code extension combined with a GitHub-integrated AI platform that provides automated code reviews, PR summaries, developer insights, team metrics, and manager analytics.
